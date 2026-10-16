@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="tr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ARTANALİZ | Reklam ve İletişim Danışmanlığı</title>
+    
+    <!-- SEO & OPEN GRAPH (OG) META ETİKETLERİ -->
+    <meta name="description" content="Sanatı, Analizi ve 20 Yıllık Tecrübeyi Bir Araya Getiren Bütünleşik Reklam Ajansı. Başarınız Görülmeye Değer.">
+    <meta property="og:title" content="ARTANALİZ | Reklam ve İletişim Danışmanlığı">
+    <meta property="og:description" content="Sanatı, Analizi ve 20 Yıllık Tecrübeyi Bir Araya Getiren Bütünleşik Reklam Ajansı. Başarınız Görülmeye Değer.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://www.artanaliz.com.tr/assets/images/og-artanaliz-preview.jpg">
+    <meta property="og:url" content="https://www.artanaliz.com.tr">
+
+    <!-- Tailwind CSS (CDN) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Plus Jakarta Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                    },
+                    colors: {
+                        artGreen: '#82b666',      // Orijinal Fıstık Yeşili
+                        artDark: '#0B0F17',       // Gece Mavisi / Antrasit Zemin
+                        artCard: '#131924',       // Kart Zemin
+                        artBorder: '#1E293B'      // Zarif Çerçeve
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* PDF Analitik Izgara (Grid) Arka Plan */
+        .bg-grid-pattern {
+            background-size: 40px 40px;
+            background-image: 
+                linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+        }
+        /* PDF Matbaa / Aks Kılavuz Çizgileri Dokunuşu (+ İşaretleri) */
+        .crop-marks {
+            position: relative;
+        }
+        .crop-marks::before {
+            content: '+';
+            position: absolute;
+            top: -8px;
+            left: -8px;
+            color: #82b666;
+            font-size: 14px;
+            font-family: monospace;
+            opacity: 0.6;
+        }
+        .crop-marks::after {
+            content: '+';
+            position: absolute;
+            bottom: -8px;
+            right: -8px;
+            color: #82b666;
+            font-size: 14px;
+            font-family: monospace;
+            opacity: 0.6;
+        }
+        /* Kayan Yazı Bandı (Marquee) */
+        @keyframes marquee {
+            0% { transform: translateX(0%); }
+            100% { transform: translateX(-50%); }
+        }
+        .animate-marquee {
+            display: flex;
+            width: 200%;
+            animation: marquee 30s linear infinite;
+        }
+    </style>
+</head>
+<body class="bg-artDark text-slate-100 font-sans antialiased selection:bg-artGreen selection:text-artDark overflow-x-hidden bg-grid-pattern">
+
+    <!-- ARKA PLAN B&W FILIGRAN (PDF SAYFA 10) -->
+    <div class="fixed inset-0 pointer-events-none z-0 opacity-[0.03] grayscale bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1600&q=80');"></div>
+
+    <!-- STICKY HEADER & ORİJİNAL LOGO -->
+    <header class="sticky top-0 z-50 bg-artDark/90 backdrop-blur-md border-b border-artBorder/80">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between relative z-10">
+            
+            <!-- ORİJİNAL VECTOR ARTANALİZ LOGOSU -->
+            <a href="#hero" class="flex items-center space-x-3.5 group">
+                <div class="w-10 h-10 bg-[#82b666] p-1.5 rounded flex flex-col justify-between items-center shadow-lg shadow-artGreen/20 transition group-hover:scale-105">
+                    <div class="w-full h-full border-[2.5px] border-white relative flex flex-col items-center justify-between p-0.5">
+                        <div class="w-2 h-2 bg-white"></div>
+                        <div class="w-2 h-2 bg-black"></div>
+                    </div>
+                </div>
+                <div class="flex flex-col">
+                    <div class="flex text-2xl font-black tracking-tight leading-none">
+                        <span class="text-white">ART</span>
+                        <span class="text-black bg-[#82b666] px-1 rounded ml-0.5">ANALİZ</span>
+                    </div>
+                    <span class="text-[9px] font-bold uppercase tracking-widest text-slate-400 mt-0.5">Reklam ve İletişim Danışmanlığı</span>
+                </div>
+            </a>
+
+            <!-- MENÜ SIRALAMASI -->
+            <nav class="hidden lg:flex space-x-7 text-xs font-extrabold uppercase tracking-widest text-slate-300">
+                <a href="#hero" class="hover:text-artGreen transition">01. Vizyon</a>
+                <a href="#hizmetler" class="hover:text-artGreen transition">02. Hizmetlerimiz</a>
+                <a href="#dijital-ayna" class="hover:text-artGreen transition">03. Büyüme Mimarisi</a>
+                <a href="#fikir-atolyesi" class="hover:text-artGreen transition">04. Fikir & Metin Atölyesi</a>
+                <a href="#referanslar" class="hover:text-artGreen transition">05. Referanslarımız</a>
+            </nav>
+
+            <div>
+                <a href="#iletisim" class="inline-block border border-artGreen text-artGreen hover:bg-artGreen hover:text-artDark font-extrabold py-2.5 px-5 rounded text-xs uppercase tracking-wider transition">
+                    Sizi Arayalım
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- 1. VİZYON VE PRESTİJ (HERO BÖLÜMÜ) -->
+    <section id="hero" class="relative pt-20 pb-28 px-4 max-w-7xl mx-auto z-10">
+        <div class="max-w-4xl crop-marks p-2">
+            <div class="inline-flex items-center space-x-2 bg-artGreen/10 border border-artGreen/30 px-3.5 py-1.5 rounded mb-8">
+                <span class="w-2 h-2 rounded-full bg-artGreen animate-pulse"></span>
+                <span class="text-xs font-extrabold uppercase tracking-widest text-artGreen">20 Yılı Aşan Tecrübe</span>
+            </div>
+            
+            <h1 class="text-4xl sm:text-6xl md:text-7xl font-black tracking-tight text-white leading-[1.08]">
+                Başarınız <br>
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-artGreen via-emerald-300 to-white">Görülmeye Değer.</span>
+            </h1>
+            
+            <p class="mt-8 text-base sm:text-xl text-slate-300 font-normal leading-relaxed max-w-3xl">
+                Sanatı, Analizi ve 20 yıllık tecrübeyi bir araya getiren bütünleşik reklam ajansıyız. Markanıza değer katmak için 2004'ten bu yana İstanbul ve Sakarya merkezlerimizde strateji, içerik ve tasarım üretiyoruz.
+            </p>
+
+            <div class="mt-10 flex flex-col sm:flex-row gap-4">
+                <a href="#dijital-ayna" class="bg-artGreen hover:bg-emerald-400 text-artDark font-black text-xs uppercase tracking-wider py-4 px-8 rounded text-center transition shadow-lg shadow-artGreen/20">
+                    Satış Geliştirme Mimarisi
+                </a>
+                <a href="#hizmetler" class="border border-slate-700 hover:border-slate-500 text-slate-200 font-bold text-xs uppercase tracking-wider py-4 px-8 rounded text-center transition">
+                    Hizmetlerimizi İnceleyin
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 2. HİZMETLERİMİZ -->
+    <section id="hizmetler" class="py-24 px-4 max-w-7xl mx-auto relative z-10 border-t border-artBorder">
+        <div class="mb-16">
+            <span class="text-xs font-extrabold uppercase tracking-widest text-artGreen">02. HİZMETLERİMİZ</span>
+            <h2 class="text-3xl md:text-4xl font-black text-white mt-2">Bütünleşik Çözüm Alanlarımız</h2>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div class="bg-artCard border border-artBorder p-8 rounded crop-marks hover:border-artGreen transition">
+                <div class="text-artGreen text-3xl font-black mb-4">01</div>
+                <h3 class="text-white text-xl font-bold mb-2">Konvansiyonel Reklam</h3>
+                <p class="text-slate-400 text-sm leading-relaxed">TV, radyo, Açık Hava (OOH), dergi, gazete ve basılı mecralarda 20 yıllık tam hizmet ajansı disiplini.</p>
+            </div>
+            <div class="bg-artCard border border-artBorder p-8 rounded crop-marks hover:border-artGreen transition">
+                <div class="text-artGreen text-3xl font-black mb-4">02</div>
+                <h3 class="text-white text-xl font-bold mb-2">Sosyal Medya & E-Ticaret</h3>
+                <p class="text-slate-400 text-sm leading-relaxed">Sosyal medya yönetimi, dijital içerik üretimi ve e-ticarete hazırlık süreçlerinin beraber yürütülmesi.</p>
+            </div>
+            <div class="bg-artCard border border-artBorder p-8 rounded crop-marks hover:border-artGreen transition">
+                <div class="text-artGreen text-3xl font-black mb-4">03</div>
+                <h3 class="text-white text-xl font-bold mb-2">Fikir & Metin Atölyesi</h3>
+                <p class="text-slate-400 text-sm leading-relaxed">Slogan tasarımı, marka manifestosu, lansman metinleri ve reklam senaryoları üretimi.</p>
+            </div>
+            <div class="bg-artCard border border-artBorder p-8 rounded crop-marks hover:border-artGreen transition">
+                <div class="text-artGreen text-3xl font-black mb-4">04</div>
+                <h3 class="text-white text-xl font-bold mb-2">Stratejik Projeler</h3>
+                <p class="text-slate-400 text-sm leading-relaxed">Sektörel çalıştay yönetimi, kurumsal iletişim stratejileri ve FERP yazılım süreçleri.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. ARTANALİZ SATIŞ GELİŞTİRME MİMARİSİ (YENİLENEN 03. BÖLÜM) -->
+    <section id="dijital-ayna" class="py-24 px-4 max-w-7xl mx-auto relative z-10">
+        <div class="bg-gradient-to-br from-artCard via-artDark to-artCard border border-artGreen/30 rounded-2xl p-8 md:p-12 relative overflow-hidden shadow-2xl crop-marks">
+            
+            <!-- BAŞLIK VE SPOT METİN -->
+            <div class="max-w-4xl relative z-10 mb-12">
+                <span class="text-xs font-extrabold uppercase tracking-widest text-artGreen bg-artGreen/10 border border-artGreen/30 px-3.5 py-1.5 rounded">
+                    03. ARTANALİZ SATIŞ GELİŞTİRME MİMARİSİ
+                </span>
+                <h2 class="text-3xl md:text-5xl font-black text-white mt-6 leading-tight">
+                    Markanız Dijital Aynada Nasıl Görünüyor?
+                </h2>
+                <p class="text-slate-300 mt-4 text-base md:text-lg font-normal leading-relaxed">
+                    "Mevcut potansiyelinizi satışa dönüştürecek altyapıyı kuruyor, müşteri adaylarınızla nitelikli ve sürdürülebilir iletişim kurmanızı sağlıyoruz."
+                </p>
+            </div>
+
+            <!-- PDF DOKÜMANI BİREBİR 4 ADIMLI TİCARİ MİMARİ -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 relative z-10 mb-12">
+                
+                <!-- Adım 1 -->
+                <div class="bg-artDark/90 border border-artBorder p-6 rounded hover:border-artGreen transition flex flex-col justify-between">
+                    <div>
+                        <div class="text-artGreen text-xs font-black uppercase tracking-widest mb-1">01. ADIM</div>
+                        <h3 class="text-white text-lg font-bold">DİJİTAL AYNA</h3>
+                        <span class="text-[11px] text-artGreen font-semibold block mb-4">(Mevcut Tespiti)</span>
+                        <p class="text-slate-400 text-xs leading-relaxed mb-4">Mevcut durumu ve gözden kaçan potansiyeli tespit etmek.</p>
+                        <ul class="space-y-2 text-xs text-slate-300">
+                            <li class="flex items-center"><span class="text-artGreen mr-1.5">•</span> Durum & Sızıntı Analizi</li>
+                            <li class="flex items-center"><span class="text-artGreen mr-1.5">•</span> Kaçan Müşteri Payı Tespiti</li>
+                            <li class="flex items-center"><span class="text-artGreen mr-1.5">•</span> Harita & Güven Skorlama</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Adım 2 -->
+                <div class="bg-artDark/90 border border-artBorder p-6 rounded hover:border-artGreen transition flex flex-col justify-between">
+                    <div>
+                        <div class="text-artGreen text-xs font-black uppercase tracking-widest mb-1">02. ADIM</div>
+                        <h3 class="text-white text-lg font-bold">SATIŞ ALTYAPISI</h3>
+                        <span class="text-[11px] text-artGreen font-semibold block mb-4">(Tek Seferlik Kurulum)</span>
+                        <p class="text-slate-400 text-xs leading-relaxed mb-4">Gelen ilgiyi kayıpsız bir şekilde talebe çevirmek.</p>
+                        <ul class="space-y-2 text-xs text-slate-300">
+                            <li class="flex items-center"><span class="text-artGreen mr-1.5">•</span> Hızlı Açılış Sayfası (Landing Page)</li>
+                            <li class="flex items-center"><span class="text-artGreen mr-1.5">•</span> Otomatik WhatsApp Hattı</li>
+                            <li class="flex items-center"><span class="text-artGreen mr-1.5">•</span> Vaka & Güven Sunum Görselleri</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Adım 3 -->
+                <div class="bg-artDark/90 border border-artBorder p-6 rounded hover:border-artGreen transition flex flex-col justify-between">
+                    <div>
+                        <div class="text-artGreen text-xs font-black uppercase tracking-widest mb-1">03. ADIM</div>
+                        <h3 class="text-white text-lg font-bold">DOĞRUDAN REKLAM</h3>
+                        <span class="text-[11px] text-artGreen font-semibold block mb-4">(Nokta Atışı Erişim)</span>
+                        <p class="text-slate-400 text-xs leading-relaxed mb-4">İlgili kitleyi doğru mesajla altyapımıza çekmek.</p>
+                        <ul class="space-y-2 text-xs text-slate-300">
+                            <li class="flex items-center"><span class="text-artGreen mr-1.5">•</span> Google & Meta Odaklı Reklamlar</li>
+                            <li class="flex items-center"><span class="text-artGreen mr-1.5">•</span> Güven Odaklı Reels Videoları</li>
+                            <li class="flex items-center"><span class="text-artGreen mr-1.5">•</span> Lokasyon Bazlı Hedefleme</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Adım 4 -->
+                <div class="bg-artDark/90 border border-artBorder p-6 rounded hover:border-artGreen transition flex flex-col justify-between">
+                    <div>
+                        <div class="text-artGreen text-xs font-black uppercase tracking-widest mb-1">04. ADIM</div>
+                        <h3 class="text-white text-lg font-bold">TALEP VE CİRO</h3>
+                        <span class="text-[11px] text-artGreen font-semibold block mb-4">(Operasyonel Sonuç)</span>
+                        <p class="text-slate-400 text-xs leading-relaxed mb-4">Gelen her aramayı satışa ve randevuya dönüştürmek.</p>
+                        <ul class="space-y-2 text-xs text-slate-300">
+                            <li class="flex items-center"><span class="text-artGreen mr-1.5">•</span> Pratik CRM Müşteri Panosu</li>
+                            <li class="flex items-center"><span class="text-artGreen mr-1.5">•</span> İkna & Satış Kapanış Rehberi</li>
+                            <li class="flex items-center"><span class="text-artGreen mr-1.5">•</span> Şeffaf Performans Raporlama</li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- TEKLİF MİMARİSİ VE ŞEFFAF ÇALIŞMA MODELİ KUTUSU -->
+            <div class="bg-artDark/60 border border-artBorder p-6 md:p-8 rounded-xl relative z-10 grid grid-cols-1 lg:grid-cols-3 gap-8 items-center">
+                <div class="lg:col-span-2">
+                    <span class="text-artGreen text-xs font-extrabold uppercase tracking-widest">ŞEFFAF ÇALIŞMA MODELİ & 5 DAKİKA RULE</span>
+                    <h4 class="text-white text-xl font-bold mt-1">Sistem Bütünlüğü ve Mülkiyet</h4>
+                    <p class="text-slate-300 text-sm mt-2 leading-relaxed">
+                        <strong>1. Faz (Altyapı):</strong> Dönüşüm odaklı açılış sayfası, WhatsApp ve takip kodları entegrasyonu bir defaya mahsus kurulur. Kurulan tüm hesaplar %100 işletmenize aittir. <br>
+                        <strong>2. Faz (Yönetim):</strong> Reklam kampanyalarının yönetimi, içerik üretimi ve sürekli ciro takibi aylık düzenle yürütülür.
+                    </p>
+                    <div class="mt-4 p-3 bg-artGreen/10 border border-artGreen/30 rounded text-xs text-slate-200">
+                        <strong class="text-artGreen">⚡ Altın Kural:</strong> Reklamla gelen mesaj veya aramaya ilk 5 dakika içinde dönüldüğünde satışa dönüşme oranı %80 artar. Satış altyapımızı bu hıza ve pratikliğe göre otomatize ediyoruz.
+                    </div>
+                </div>
+                <div class="text-center lg:text-right">
+                    <a href="#iletisim" class="inline-block bg-artGreen hover:bg-emerald-400 text-artDark font-black py-4 px-8 rounded text-xs uppercase tracking-wider transition shadow-lg shadow-artGreen/20">
+                        Ücretsiz Analiz Talebi Gönder →
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- 4. FİKİR & METİN ATÖLYESİ -->
+    <section id="fikir-atolyesi" class="py-20 bg-artDark border-t border-artBorder relative z-10 overflow-hidden">
+        <div class="max-w-4xl mx-auto px-4 text-center mb-10">
+            <span class="text-xs font-extrabold uppercase tracking-widest text-artGreen">04. FİKİR & METİN ATÖLYESİ</span>
+            <h2 class="text-3xl md:text-5xl font-black text-white mt-4">
+                "Tasarımınız Olabilir; Peki Ya Sözünüz?"
+            </h2>
+            <p class="text-slate-300 text-base md:text-xl mt-6 font-normal leading-relaxed">
+                Fikrin ve doğru kelimelerin gücüne inanıyorsanız, 20 yıllık tecrübemizle markanız için özgün slogan, lansman metinleri ve reklam senaryoları üretmeye hazırız.
+            </p>
+        </div>
+
+        <div class="bg-artCard/80 border-y border-artBorder py-4 overflow-hidden my-4">
+            <div class="animate-marquee whitespace-nowrap text-sm md:text-base font-extrabold tracking-widest text-slate-300 space-x-12">
+                <span>✦ SLOGAN TASARIMI</span>
+                <span>✦ KAMPANYA KONSEPTİ</span>
+                <span>✦ WEB METİNLERİ</span>
+                <span>✦ REKLAM SENARYOLARI</span>
+                <span>✦ MARKA MANİFESTOSU</span>
+                <span>✦ SLOGAN TASARIMI</span>
+                <span>✦ KAMPANYA KONSEPTİ</span>
+                <span>✦ WEB METİNLERİ</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. REFERANSLARIMIZ (SEKTÖREL MONOKRIM LOGO IZGARASI) -->
+    <section id="referanslar" class="py-20 bg-artDark/90 border-y border-artBorder relative z-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
+                <div>
+                    <span class="text-xs font-extrabold uppercase tracking-widest text-artGreen">05. REFERANSLARIMIZ</span>
+                    <h2 class="text-2xl md:text-4xl font-black text-white mt-2">Birlikte Değer Ürettiğimiz Referanslarımız</h2>
+                </div>
+                <p class="text-slate-400 text-sm mt-2 md:mt-0 font-medium">Sektörel bazda kategorize edilmiş referans ağımız.</p>
+            </div>
+
+            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
+                <div class="bg-artCard/60 border border-artBorder p-6 rounded flex flex-col items-center justify-center grayscale hover:grayscale-0 hover:border-artGreen/50 transition duration-300 group crop-marks">
+                    <span class="text-lg font-bold text-slate-400 group-hover:text-white transition">TRT Çocuk</span>
+                    <span class="text-[10px] uppercase font-bold text-slate-500 mt-1">Kamusal & Kurumsal</span>
+                </div>
+                <div class="bg-artCard/60 border border-artBorder p-6 rounded flex flex-col items-center justify-center grayscale hover:grayscale-0 hover:border-artGreen/50 transition duration-300 group crop-marks">
+                    <span class="text-lg font-bold text-slate-400 group-hover:text-white transition">SATSO</span>
+                    <span class="text-[10px] uppercase font-bold text-slate-500 mt-1">Kamusal & Kurumsal</span>
+                </div>
+                <div class="bg-artCard/60 border border-artBorder p-6 rounded flex flex-col items-center justify-center grayscale hover:grayscale-0 hover:border-artGreen/50 transition duration-300 group crop-marks">
+                    <span class="text-lg font-bold text-slate-400 group-hover:text-white transition">Beykoz Bld.</span>
+                    <span class="text-[10px] uppercase font-bold text-slate-500 mt-1">Kamusal & Kurumsal</span>
+                </div>
+                <div class="bg-artCard/60 border border-artBorder p-6 rounded flex flex-col items-center justify-center grayscale hover:grayscale-0 hover:border-artGreen/50 transition duration-300 group crop-marks">
+                    <span class="text-lg font-bold text-slate-400 group-hover:text-white transition text-center">Akyazı Bld. / Türkiye Yüzyılı</span>
+                    <span class="text-[10px] uppercase font-bold text-slate-500 mt-1">Kamusal & Kurumsal</span>
+                </div>
+                <div class="bg-artCard/60 border border-artBorder p-6 rounded flex flex-col items-center justify-center grayscale hover:grayscale-0 hover:border-artGreen/50 transition duration-300 group crop-marks">
+                    <span class="text-lg font-bold text-slate-400 group-hover:text-white transition">Global Enerji</span>
+                    <span class="text-[10px] uppercase font-bold text-slate-500 mt-1">Sanayi & Teknoloji</span>
+                </div>
+                <div class="bg-artCard/60 border border-artBorder p-6 rounded flex flex-col items-center justify-center grayscale hover:grayscale-0 hover:border-artGreen/50 transition duration-300 group crop-marks">
+                    <span class="text-lg font-bold text-slate-400 group-hover:text-white transition">Kartal Bombe</span>
+                    <span class="text-[10px] uppercase font-bold text-slate-500 mt-1">Sanayi & Teknoloji</span>
+                </div>
+                <div class="bg-artCard/60 border border-artBorder p-6 rounded flex flex-col items-center justify-center grayscale hover:grayscale-0 hover:border-artGreen/50 transition duration-300 group crop-marks">
+                    <span class="text-lg font-bold text-slate-400 group-hover:text-white transition">FERP</span>
+                    <span class="text-[10px] uppercase font-bold text-slate-500 mt-1">Sanayi & Teknoloji</span>
+                </div>
+                <div class="bg-artCard/60 border border-artBorder p-6 rounded flex flex-col items-center justify-center grayscale hover:grayscale-0 hover:border-artGreen/50 transition duration-300 group crop-marks">
+                    <span class="text-lg font-bold text-slate-400 group-hover:text-white transition">Neo Akademi</span>
+                    <span class="text-[10px] uppercase font-bold text-slate-500 mt-1">Girişim & Hizmet</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. İLETİŞİM FORMU VE HARİTA -->
+    <section id="iletisim" class="py-24 bg-artDark border-t border-artBorder relative z-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+                <div>
+                    <span class="text-xs font-extrabold uppercase tracking-widest text-artGreen">İLETİŞİM</span>
+                    <h2 class="text-3xl md:text-5xl font-black text-white mt-2">Markanıza Değer Katmak İçin Çalışıyoruz</h2>
+                    <p class="text-slate-300 mt-4 text-base md:text-lg font-normal">
+                        İletişim stratejinizi planlamak veya Satış Geliştirme Mimarimizden faydalanmak için formu doldurun, sizi arayalım.
+                    </p>
+
+                    <div class="mt-8 space-y-4">
+                        <div class="p-5 bg-artCard rounded border border-artBorder flex flex-col justify-between crop-marks">
+                            <span class="text-artGreen font-extrabold text-xs uppercase">İstanbul İletişim & Strateji Merkezi</span>
+                            <p class="text-white font-bold text-sm mt-1">Kaynarca Mh., E-5 Yanyol Cd., No:134C Pendik / İstanbul</p>
+                            <p class="text-slate-400 text-xs mt-2">Tel: +90 532 355 98 95 | E-Posta: info@artanaliz.com.tr</p>
+                        </div>
+                        <div class="p-5 bg-artCard rounded border border-artBorder flex flex-col justify-between crop-marks">
+                            <span class="text-artGreen font-extrabold text-xs uppercase">Sakarya İletişim & Prodüksiyon Stüdyosu</span>
+                            <p class="text-white font-bold text-sm mt-1">Saha & Çekim Operasyonları</p>
+                            <p class="text-slate-400 text-xs mt-2">Tel: +90 532 331 82 52 | E-Posta: info@artanaliz.com.tr</p>
+                        </div>
+                    </div>
+
+                    <!-- DARK MODE MAP VIEW -->
+                    <div class="mt-6 rounded overflow-hidden border border-artBorder h-48 bg-slate-900 relative flex items-center justify-center">
+                        <iframe class="w-full h-full opacity-30 grayscale contrast-200" src="https://maps.google.com/maps?q=Pendik,Istanbul&t=&z=12&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no"></iframe>
+                        <div class="absolute inset-0 bg-artDark/60 pointer-events-none"></div>
+                        <span class="absolute text-xs font-bold text-artGreen uppercase tracking-widest bg-artDark/90 px-3 py-1.5 rounded border border-artGreen/30">Dark Mode Map View</span>
+                    </div>
+                </div>
+
+                <!-- FORM -->
+                <div class="bg-artCard border border-artBorder p-8 rounded shadow-2xl crop-marks">
+                    <form id="contactForm">
+                        <div class="space-y-4">
+                            <div>
+                                <label class="block text-xs font-bold uppercase text-slate-400 mb-1">Ad Soyad / Firma Adı</label>
+                                <input type="text" id="formName" required class="w-full bg-artDark border border-artBorder rounded px-4 py-3 text-white focus:outline-none focus:border-artGreen">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-bold uppercase text-slate-400 mb-1">Telefon Numarası (Zorunlu)</label>
+                                <input type="tel" id="formPhone" required class="w-full bg-artDark border border-artBorder rounded px-4 py-3 text-white focus:outline-none focus:border-artGreen">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-bold uppercase text-slate-400 mb-1">Hizmet Seçimi</label>
+                                <select id="formService" class="w-full bg-artDark border border-artBorder rounded px-4 py-3 text-white focus:outline-none focus:border-artGreen">
+                                    <option>Satış Geliştirme Mimarisi & Dijital Ayna</option>
+                                    <option>Sosyal Medya & E-Ticaret</option>
+                                    <option>Fikir & Metin Atölyesi</option>
+                                    <option>Tam Hizmet Ajansı</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block text-xs font-bold uppercase text-slate-400 mb-1">Mesajınız</label>
+                                <textarea id="formMessage" rows="3" class="w-full bg-artDark border border-artBorder rounded px-4 py-3 text-white focus:outline-none focus:border-artGreen"></textarea>
+                            </div>
+                            <button type="submit" class="w-full bg-artGreen hover:bg-emerald-400 text-artDark font-black py-4 rounded text-center transition uppercase tracking-wider text-xs shadow-lg shadow-artGreen/20">
+                                RANDEVU TALEBİ GÖNDER
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-artDark py-8 border-t border-artBorder text-center text-xs text-slate-500 relative z-10">
+        <p>© 2004 - 2026 ARTANALİZ Reklam ve İletişim Danışmanlığı. Tüm hakları saklıdır.</p>
+    </footer>
+
+    <!-- SABİT (FLOATING) EKRAM SAĞ ALT KÖŞE WHATSAPP İLETİŞİM BUTONU -->
+    <a href="https://wa.me/905323559895?text=Merhaba%20ARTANAL%C4%B0Z%2C%20hizmetleriniz%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum." 
+       target="_blank" 
+       rel="noopener noreferrer"
+       class="fixed bottom-6 right-6 z-50 flex items-center space-x-2.5 bg-[#25D366] hover:bg-[#20ba5a] text-white px-4 py-3 rounded-full shadow-2xl transition duration-300 hover:scale-105 border border-white/20 group"
+       aria-label="WhatsApp İletişim Hattı">
+        <!-- WhatsApp SVG Logosu -->
+        <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24">
+            <path d="M12.012 2c-5.506 0-9.989 4.478-9.989 9.984 0 1.758.459 3.474 1.33 4.982l-1.413 5.163 5.288-1.387c1.45.792 3.09 1.226 4.784 1.226 5.507 0 9.99-4.478 9.99-9.984s-4.483-9.984-9.99-9.984zm0 18.312c-1.517 0-3.003-.407-4.301-1.176l-.308-.182-3.197.838.852-3.118-.2-.318c-.846-1.347-1.293-2.909-1.293-4.512 0-4.606 3.748-8.353 8.353-8.353 4.604 0 8.351 3.747 8.351 8.353 0 4.607-3.747 8.354-8.351 8.354zm4.577-6.241c-.251-.126-1.484-.733-1.714-.816-.23-.084-.398-.126-.566.126-.168.251-.649.816-.795.983-.146.168-.293.188-.544.063-.251-.126-1.06-.39-2.019-1.244-.746-.665-1.25-1.488-1.396-1.739-.146-.251-.015-.387.11-.512.112-.112.251-.293.377-.439.126-.146.168-.251.251-.418.084-.168.042-.314-.021-.439-.063-.126-.566-1.36-.775-1.861-.203-.488-.41-.422-.566-.43-.146-.008-.314-.01-.481-.01s-.439.063-.669.314c-.23.251-.879.858-.879 2.093s.899 2.428 1.025 2.595c.126.168 1.769 2.702 4.286 3.789.599.259 1.067.414 1.431.53.602.191 1.15.164 1.583.1.482-.072 1.484-.607 1.693-1.192.209-.586.209-1.088.146-1.192-.063-.105-.23-.168-.481-.293z"/>
+        </svg>
+        <span class="font-bold text-xs uppercase tracking-wider hidden sm:inline-block">WhatsApp İletişim</span>
+    </a>
+
+    <!-- FORM DOLDURMA JS -->
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const name = document.getElementById('formName').value;
+            const phone = document.getElementById('formPhone').value;
+            const service = document.getElementById('formService').value;
+            const message = document.getElementById('formMessage').value;
+
+            const waText = `Merhaba ARTANALİZ,%0AWeb sitenizden yeni bir randevu talebi var:%0A%0A*Ad Soyad/Firma:* ${encodeURIComponent(name)}%0A*Telefon:* ${encodeURIComponent(phone)}%0A*Hizmet:* ${encodeURIComponent(service)}%0A*Mesaj:* ${encodeURIComponent(message)}`;
+            
+            alert('Talebiniz alınmıştır. E-posta (info@artanaliz.com.tr) ve WhatsApp bildirim hattına iletiliyor.');
+            window.open(`https://wa.me/905323559895?text=${waText}`, '_blank');
+        });
+    </script>
+
+</body>
+</html>
